@@ -1,0 +1,49 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin panel:{{adminsession.name}}</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin/products">All products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All users</a>
+                    </li>
+
+                </ul>
+                {{!-- {{#if admin}}
+                <a type="button" href="/admin/admin-logout" class="btn btn-danger">Logout</a>
+                {{else}}
+                <a type="button" href="/admin/admin-login" class="btn btn-success">Login</a>
+                {{/if}} --}}
+                                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{#if user}}
+                        {{adminsession.name}} 
+                        {{else}}
+                        account
+                        {{/if}}
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    
+                        <a class="dropdown-item" href="/admin/admin-logout">logout</a>
+                       
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</header>

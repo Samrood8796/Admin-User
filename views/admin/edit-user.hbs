@@ -1,0 +1,38 @@
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
+                    {{!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                        class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                        alt="Sample photo"> --}}
+
+                    <div>
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Edit users</h3>
+
+                        <form action="/admin/edit-user/{{user.email}}" class="px-md-2" method="post">
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="name" >Name</label>
+                                <input type="text" name="name" id="name" class="form-control w-50" value="{{user.name}}"/>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="email">email</label>
+                                <input type="email" name="email" id="email" class="form-control w-50" value="{{user.email}}" />
+
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control w-50" value=""/>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg mb-1 w-25 m-auto">Confirm</button>
+                        </form>
+                    </div>
+             
+        </div>
+    </div>
+    </div>
+</section>

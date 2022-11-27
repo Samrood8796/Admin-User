@@ -1,0 +1,52 @@
+<section>
+  <div class="container">
+    {{!-- <div class="row mt-4">
+      <a href="admin/add-users" class="btn btn-success w-25 ms-auto">Add Users</a>
+    </div> --}}
+    <div class="mt-4">
+   <a href="admin/add-users" class="btn btn-success">Add Users</a></div>
+   <div class="mt-5">
+    <table class="table"id="productsTable">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Edit User</th>
+          <th scope="col">Delete</th>
+          {{!-- <th>
+            <a href="admin/add-users" class="btn btn-success">Add Users</a>
+          </th> --}}
+          {{!-- <th scope="col">password</th> --}}
+
+        </tr>
+      </thead>
+      <tbody>
+        {{#each user}}
+        <tr>
+          <td scope="row">{{@index}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.email}}</td>
+          {{!-- <td>{{this.password}}</td> --}}
+          <td> <a href="/admin/edit-user/{{this.email}}" class="btn btn-primary">Edit</a></td>
+            {{!-- <a href="/admin/delete-user?id={{this._id}}" class="btn btn-danger">delete</a> --}}
+            <td><a href="/admin/delete-user/{{this.email}}" class="btn btn-danger"
+              onclick="return confirm('delete user {{this.name}}')">Delete</a>
+          
+
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+   </div>
+  </div>
+</section>
+
+<script>
+  $ (document).ready(function () {
+   
+    $('#productsTable').DataTable();
+});
+</script>
+
+
